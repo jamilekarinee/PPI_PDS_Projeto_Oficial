@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta charset="UTF-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>RN Denúncias</title>
+       <!-- Google Fonts : -->
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Gabarito&family=Lato&family=Lumanosimo&family=Poppins:ital,wght@0,100;0,300;0,400;1,300&family=Ysabeau+SC:wght@500;600;700&display=swap"
+              rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+              rel="stylesheet">
+</head>
+<body>
+       <!-- Cabeçalho -->
+       <header class="cabecalho">
+              <div class="cabecalho__detalhes">
+                     <p class="nome_site_rn">RN</p>
+                     <h1 class="nome_site_denuncias">Denúncias</h1>
+              </div>
+       </header>
+       
+       <!-- Formulário -->
+       <form action="https://formsubmit.co/jamile.karine@escolar.ifrn.edu.br" method="post"
+              enctype="multipart/form-data">
+              <h3>Informe o problema urbano</h3>
+              <select name="Problema Urbano">
+                     <option>Pavimentação</option>
+                     <option>Saneamento</option>
+                     <option>Abandono de prédios públicos</option>
+                     <option>Alagamentos</option>
+                     <option>Outros -Detalhe na descrição!-</option>
+              </select>
+              <!-- Localização -->
+              <h3>Informe a localização</h3>
+              <select name="Localização">
+                     <option *ngFor="let c of cidade">{{c.nome}}</option>
+              </select>
+              <!-- Detalhamento -->
+              <h3>Detalhamento da denúncia</h3>
+              <textarea class="detalhamento_problema" placeholder="Digite aqui..." name="Descrição" required></textarea>
+              <br>
+              <!-- Imagens -->
+              <h3>Envie-nos imagens</h3>
+              <label for="imagem">Escolha uma imagem para enviar (PNG ou JPG):</label> <br><br>
+              <input type="file" name="imagem1" accept="image/*" required><br><br>
+              <input type="file" name="Imagem2" accept="image/*"> <br> <br>
+              <input type="file" name="Imagem3" accept="image/*"> <br> <br>
+              <button type="submit" class="botao">Enviar</button>
+
+              <!-- Inputs do FormSubmit -->
+              <input type="hidden" name="_subject" value="Nova denúncia!">
+              <input type="text" name="_honey" style="display: none;">
+              <input type="hidden" name="_captcha" value="false">
+       </form>
+</body>
+</html>
